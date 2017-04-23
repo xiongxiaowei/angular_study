@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app='test'>
+  <head>
+     <meta charset="utf-8">
+     <title>angular</title>
+     <meta name="viewport" content="width=device-width,initial-scale=1.0,
+     maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+     <link rel="stylesheet" type="text/css" href="static/css/reset.css">
+     <script src="js/angular1.58.js" charset="utf-8"></script>
+     <script >
+       var app=angular.module('test',[])
+       app.directive('abc',function(){
+         return {
+           restrict:'A',
+           template:`<ng-transclude></ng-transclude><a href='javascript:;'>x</a>`,
+           transclude:true
+         }
+       })
+       app.controller('zhangsan',function($scope,$http){
+            $scope.arr=['apple','pear','orange','banana']
+       })
+     </script>
+ </head>
+ <body ng-controller='zhangsan'>
+ <ul>
+   <li abc ng-repeat='v in arr'>{{v}}</li>
+ </ul>
+ </body>
+</html>

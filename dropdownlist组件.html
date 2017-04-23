@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app='test'>
+  <head>
+     <meta charset="utf-8">
+     <title>angular</title>
+     <meta name="viewport" content="width=device-width,initial-scale=1.0,
+     maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+         <script src="bower_components/angular/angular.js" charset="utf-8"></script>
+     <script >
+       var app=angular.module('test',[])
+       app.directive('dropdownlist',function(){
+         return {
+           restrict:'E',
+           transclude:true,
+           template:`
+           <input type="text" ng-model='str' name="" value="">
+           <ul>
+             <li ng-repeat='v in arr' ng-show='v.indexOf(str)!=-1'>{{v}} </li>
+           </ul>
+           `
+         }
+       })
+       app.controller('con1',function($scope,$http){
+           $scope.arr=['apple','orange','pear','name','content']
+           $scope.str=''
+       })
+     </script>
+ </head>
+ <body ng-controller='con1'>
+  <dropdownlist/>
+ </body>
+</html>

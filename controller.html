@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app='test'>
+  <head>
+     <meta charset="utf-8">
+     <title>angular</title>
+     <meta name="viewport" content="width=device-width,initial-scale=1.0,
+     maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+     <link rel="stylesheet" type="text/css" href="static/css/reset.css">
+     <script src="bower_components/angular/angular.js" charset="utf-8"></script>
+     <script >
+       var app=angular.module('test',[])
+       app.controller('zhangsan',function($scope){
+         $scope.a=12
+         alert($scope.b)//undifined
+         alert($scope.c)
+       })
+     </script>
+ </head>
+ <body ng-init="c=55">
+    <div ng-controller='zhangsan'>
+      {{a}}
+    </div>
+    <div ng-controller='zhangsan' >
+      a:{{a}}
+    </div>
+    <div >
+      {{a}} 这里a是不显示的，因为访问不到
+    </div>
+    <div ng-init="b=5">
+   {{b}}
+    </div>
+ </body>
+</html>

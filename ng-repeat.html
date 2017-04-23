@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app=''>
+  <head>
+     <meta charset="utf-8">
+     <title>angular</title>
+     <meta name="viewport" content="width=device-width,initial-scale=1.0,
+     maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+     <link rel="stylesheet" type="text/css" href="static/css/reset.css">
+     <script src="bower_components/angular/angular.js" charset="utf-8"></script>
+ </head>
+ <body >
+   <ul ng-init="arr=['apple','pear','orange']">
+     <li ng-repeat='val in arr'>{{val}}</li>
+   </ul>
+   <ul ng-init="json={a:11,b:222,c:333}">
+     <li ng-repeat='(val,index) in json'>{{index}}--->{{val}}</li>
+   </ul>
+ </body>
+</html>

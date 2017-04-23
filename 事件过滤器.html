@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app='test'>
+  <head>
+     <meta charset="utf-8">
+     <title>angular</title>
+     <meta name="viewport" content="width=device-width,initial-scale=1.0,
+     maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+     <link rel="stylesheet" type="text/css" href="static/css/reset.css">
+     <script src="bower_components/angular/angular.js" charset="utf-8"></script>
+     <script >
+       var app=angular.module('test',[])
+       app.controller('zhangsan',function($scope,$http){
+          $scope.time=1492786449559
+       })
+     </script>
+ </head>
+ <body ng-controller='zhangsan'>
+<a href="md/1.txt">date</a>
+<span>{{time|date:'yyyy-MM-dd  HH:mm:ss'}}</span>
+ </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app='test'>
+  <head>
+     <meta charset="utf-8">
+     <title>angular</title>
+     <meta name="viewport" content="width=device-width,initial-scale=1.0,
+     maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+     <link rel="stylesheet" type="text/css" href="static/css/reset.css">
+     <script src="bower_components/angular/angular.js" charset="utf-8"></script>
+     <script >
+       var app=angular.module('test',[])
+       app.controller('zhangsan',function($scope,$http){
+             $scope.colors=['red','Blue','Purple','blacK','pink','green']
+             $scope.a='n'
+             $scope.fn=function(value,index,item){
+               console.log(arguments)
+               console.log(this)
+               return value[0]===value[0].toUpperCase()
+             }
+             $scope.fn1=function(value,index,item){
+              //末尾大写
+               return value[value.length-1]===value[value.length-1].toUpperCase()
+             }
+       })
+     </script>
+ </head>
+ <body ng-controller='zhangsan'>
+   <a href="md/1.md">filter过滤器</a>
+   //传字符串
+       <p>{{colors | filter:'e'}}</p>
+       //传变量
+       <h3>{{colors | filter:a}}</h3>
+      <h3>{{colors |filter:fn}}</h3>
+ </body>
+</html>

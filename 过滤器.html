@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app='test'>
+  <head>
+     <meta charset="utf-8">
+     <title>angular</title>
+     <meta name="viewport" content="width=device-width,initial-scale=1.0,
+     maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+     <link rel="stylesheet" type="text/css" href="static/css/reset.css">
+     <script src="bower_components/angular/angular.js" charset="utf-8"></script>
+     <script >
+       var app=angular.module('test',[])
+       app.controller('zhangsan',function($scope,$http){
+         $scope.items=[
+           {name:"白色宽松韩版学生女士纯棉t恤",price:68,time:1492731581033},
+           {name:'白色短袖T恤女装 2017夏季纯棉百搭上衣服韩版大码学生半袖打底衫',price:158.8,time:1492751481033},
+           {name:'夏季新款纯白色V领显瘦短袖t恤女时尚纯棉半袖打底衫女款上衣服潮',price:68.8,time:1492761481633},
+           {name:'春秋牛仔裙时尚连衣裙女套装2017春装新款潮韩版裙子显瘦衣服女装',price:285.5,time:1492772481033}
+         ]
+       })
+     </script>
+ </head>
+ <body ng-controller='zhangsan'>
+ <div ng-repeat="val in items">
+   <h1>{{val.name}}</h1>
+   <span>{{val.price|currency}}</span>
+   <strong>{{val.time|date:'yyyy年MM月dd日 HH时mm分ss秒'}}</strong>
+   <i>{{val.time|date:"yyyy年MM月dd日 HH：mm:ss"}}</i>
+ </div>
+ </body>
+</html>

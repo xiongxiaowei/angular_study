@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app='test'>
+  <head>
+     <meta charset="utf-8">
+     <title>angular</title>
+     <meta name="viewport" content="width=device-width,initial-scale=1.0,
+     maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+     <style media="screen">
+       .show{width: 300px;height: 60px;border: 1px solid #ccc;line-height: 20px;overflow: hidden;}
+       .show1{width: 300px;border: 1px solid #ccc;line-height: 20px;overflow: hidden;}
+     </style>
+     <script src="js/angular1.58.js" charset="utf-8"></script>
+     <script >
+       var app=angular.module('test',[])
+       app.directive('abc',function(){
+         return {
+           restrict:'E',
+           transclude:true,
+           template:`
+              <div class="{{show?'show':'show1'}}">
+                 <a href='javascript:;' ng-click='show=!show'>显示更多&gt;&gt;&gt</a>
+                 <span ng-transclude></span>
+              </div>
+           `
+         }
+       })
+       app.controller('zhangsan',function($scope,$http){
+          $scope.show=false
+       })
+     </script>
+ </head>
+ <body ng-controller='zhangsan'>
+
+   <abc >据美国哥伦比亚广播公司(CBS)4月17日报道，在今年白宫复活节滚彩蛋活动开始前的奏国歌环节，第一夫人梅拉尼亚用手轻轻触碰身边站着的丈夫的手，似乎在提醒他把手放在胸口上，这一细微动作引发网友的讨论。
+
+当天，特朗普在白宫南草坪欢迎到场的宾客后，然后就到了奏国歌的时候。梅拉尼亚和他们11岁的儿子巴伦立刻把手放在胸口，但是特朗普仍将手垂在裤边。这时候，梅拉尼亚用左手轻轻推了一下身边的丈夫，似乎是在提醒他把手放在胸口。而之后，特朗普也的确这样做了</abc>
+  <abc>　【总理为农机合作社理事长支三招】李克强20日来到济南曲家村察看春季小麦长势。得知村民孙玉河依托300亩流转土地成立农机合作社，总理给这位理事长支了三招：一是坚持走合作社路子，发展多种形式适度规模经营；二是拓展农机服务，做好亦农亦工；三是改良品种，发展订单农业，以精细化促农业提质增效。</abc>
+ </body>
+</html>

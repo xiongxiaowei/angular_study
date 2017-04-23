@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app='test'>
+  <head>
+     <meta charset="utf-8">
+     <title>angular</title>
+     <meta name="viewport" content="width=device-width,initial-scale=1.0,
+     maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+     <link rel="stylesheet" type="text/css" href="static/css/reset.css">
+     <script src="bower_components/angular/angular.js" charset="utf-8"></script>
+     <script >
+       var app=angular.module('test',[])
+       app.controller('zhangsan',function($s){
+        $s.a=12  //挂掉了，不能随便起名字   Unknown provider: $sProvider ，(菜单已经定了，名字已取好)人家都点宫保鸡丁，你点鸡块，表示不认识这个鬼;改名字是要付出代价的，那么非要改名字怎么做到呢？
+       })
+     </script>
+ </head>
+ <body ng-controller='zhangsan'>
+ {{a}}
+ </body>
+</html>
